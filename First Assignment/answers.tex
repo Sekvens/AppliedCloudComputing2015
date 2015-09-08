@@ -26,14 +26,17 @@ Report for Assignment 1}
     Only if I'm on the private network which I suspect I will never be.
     \item \textit{What is the difference between image, instance and snapshot?}
     
-    
+    An Image is static data containing the software while an Instance is a running virtual machine that's started from an Image.
+    To create a new snapshot is to create a new image based on a already running instance.
     \item \textit{What is the name of the OpenStack service responsible for providing the: a. Image Service b. Compute Service}
     
         \begin{enumerate}
             \item \textit{Image Service}
             
+            Glance
             \item \textit{Compute Service}
             
+            Nova
         \end{enumerate}
 \end{enumerate}
 
@@ -41,10 +44,25 @@ Report for Assignment 1}
 
 \begin{enumerate}
     \item \textit{What is the technology used to provide volumes in OpenStack? Is it RAID or LVM?}
+    
+    LVM
     \item \textit{What is LVM? Explain the advantage(s) of using LVM?}
-    \item \textit{Can one volume be attached to multiple instances or vice versa? Many volumes can attack to one instance, not the opposite.}
+    
+    Logical Volume Manager provides an abstract layer ontop of the pysical disks, making the pysical disks not exposed to the OS. It uses block storages.
+    
+    One great advantage of using LVM is that the user can view the abstract volumes in a dynamic way. Making it possible to resize the volume without restarting the system. The user don't need to worry about the pysical disk(s). 
+    \item \textit{Can one volume be attached to multiple instances or vice versa?}
+    
+    After testing I found out that many volumes can attach to one instance, not the opposite.
     \item \textit{Explain the main difference between Ephemeral Storage and Block-Storage. What are the major use-cases for the different storage types?}
+    
+    From a users point of view an Empheral Storage will ``dissapear'' when the VM is terminated. This is what happends when only Nova is deployed.
+    
+    A block storage is persistant and can therefore be detatched from one VM and attached to another. 
+    Major usecase would be block storage for persistant data and Empheral Storage for non persistant data.
     \item \textit{Does your VM have ephemeral storage?}
+    
+    Yes, the data that's not on the volume I created is in Empheral storage.
 \end{enumerate}
 
 \section*{Task 3}
@@ -57,6 +75,8 @@ Report for Assignment 1}
     
     192.168.0.0/24
     \item \textit{What is the role of the router?}
+    
+    I'm assuming it directs the trafic between the external and internal network.
     \item \textit{Explain the path of the traffic of the VM to the Internet?}
     
     The path starts by connecting through the router and then into Internet.
@@ -64,14 +84,20 @@ Report for Assignment 1}
     
     ext-net
     \item \textit{What is the name of the OpenStack service handling Networks?}
+    
+    Neutron
 \end{enumerate}
 
 \section*{Task 4}
 \url{http://smog.uppmax.uu.se:8080/swift/v1/Lab1}
 \begin{enumerate}
     \item \textit{Explain the difference between a folder on your UNIX filesystem and a pseudo-folder inside a container?}
+    
+    Things stored in a container is written to several disks in the network to ensure data replication. Objects in a container have an access point for the external network, making it possible to access the contents without SSH or similar teqniues that the UNIX filesystem would require. 
     \item \textit{The corresponding system in Amazon Web Services is called "S3". Is there a principal difference between an "S3 bucket" and a container in OpenStack's object store?}
     \item \textit{What is the name of the OpenStack service providing the Object Store?}
+    
+    Swift
 \end{enumerate}
 
 \end{document}
