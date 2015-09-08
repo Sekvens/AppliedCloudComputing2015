@@ -1,0 +1,77 @@
+\documentclass[a4paper]{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+\title{Applied Cloud Computing
+Uppsala University - Autum 2015
+Report for Assignment 1}
+
+\author{John Shaw}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Task 1}
+
+\begin{enumerate}
+    \item \textit{What is the difference between the private IP and the floating IP?}
+    
+    The private IP is local in the cloud network. The floating IP is connected and transfering the connection to the the associated private IP. The floating IP is an external IP accessable through Internet.
+    \item \textit{Can you access the Internet from the VM without assigning a floating IP to the machine?}
+    
+    Only if I'm on the private network which I suspect I will never be.
+    \item \textit{What is the difference between image, instance and snapshot?}
+    
+    
+    \item \textit{What is the name of the OpenStack service responsible for providing the: a. Image Service b. Compute Service}
+    
+        \begin{enumerate}
+            \item \textit{Image Service}
+            
+            \item \textit{Compute Service}
+            
+        \end{enumerate}
+\end{enumerate}
+
+\section*{Task 2}
+
+\begin{enumerate}
+    \item \textit{What is the technology used to provide volumes in OpenStack? Is it RAID or LVM?}
+    \item \textit{What is LVM? Explain the advantage(s) of using LVM?}
+    \item \textit{Can one volume be attached to multiple instances or vice versa? Many volumes can attack to one instance, not the opposite.}
+    \item \textit{Explain the main difference between Ephemeral Storage and Block-Storage. What are the major use-cases for the different storage types?}
+    \item \textit{Does your VM have ephemeral storage?}
+\end{enumerate}
+
+\section*{Task 3}
+
+\begin{enumerate}
+    \item \textit{Explain the picture in the tab ``Network Topology''}
+    
+    It's the external network that is connected to the internal network through a router on 192.168.0.254.
+    \item \textit{What if the subnet used by the Tenant?}
+    
+    192.168.0.0/24
+    \item \textit{What is the role of the router?}
+    \item \textit{Explain the path of the traffic of the VM to the Internet?}
+    
+    The path starts by connecting through the router and then into Internet.
+    \item \textit{Find out the unique ID of the external network.}
+    
+    ext-net
+    \item \textit{What is the name of the OpenStack service handling Networks?}
+\end{enumerate}
+
+\section*{Task 4}
+\url{http://smog.uppmax.uu.se:8080/swift/v1/Lab1}
+\begin{enumerate}
+    \item \textit{Explain the difference between a folder on your UNIX filesystem and a pseudo-folder inside a container?}
+    \item \textit{The corresponding system in Amazon Web Services is called "S3". Is there a principal difference between an "S3 bucket" and a container in OpenStack's object store?}
+    \item \textit{What is the name of the OpenStack service providing the Object Store?}
+\end{enumerate}
+
+\end{document}
